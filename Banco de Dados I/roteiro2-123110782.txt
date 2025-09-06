@@ -1,0 +1,71 @@
+Questão 1:
+    Criei o banco de dados para aceitar os valores dados na entrada com nomes
+    aleatórios. Coloquei CHECKS para verificar a quantidade de caracteres nas
+    variáveis de cpf e no char
+
+Questão 2:
+    Alterei o tipo do dado do id de INTEGER para BIGINT para que possa aceitar
+    valores maiores.
+
+Questão 3:
+    Alterei o tipo de dado do "numero_qualquer" para que aceite valores até 32767
+
+Questão 4:
+    Alterei os nomes das colunas e coloquei que todos os dados não possam ser nulos.
+    Também removi a linha que tinha os valores nulos.
+
+Questão 5:
+    Fiz com que cada tarefa se tornasse única através do seu ID, não permitindo que
+    tenham duas tarefas com o mesmo ID.
+
+Questão 6:
+    6.a -> Eu já havia colocado o CHECK no length do cpf na criação da tabela
+    6.b -> Atualizei os valores dos status da tabela e coloquei a restrição para verificar
+    se o status estava dentre os previstos ('P', 'E', 'C')
+
+Questão 7:
+    Adicionei uma constraing para verificar se os valores da prioridade estão entre 0 e 5
+
+Questão 8:
+    Criei a tabela funcionarios com os atributos dados e os checks necessários
+
+Questão 9:
+    - Inserir funcionário com função 'LIMPEZA' e sem supervisor:
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000001', 'Carlos Silva', '1995-02-15', 'LIMPEZA', 'J', NULL);
+
+    - Inserir funcionário com função 'SUP_LIMPEZA' e com supervisor:
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000002', 'Ana Costa', '1990-07-23', 'SUP_LIMPEZA', 'P', '10000000003');
+
+    - Inserir funcionário com nível inválido:
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000003', 'José Souza', '1985-05-30', 'LIMPEZA', 'X', NULL);
+
+    - Inserir funcionário com função inválida:
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000004', 'Maria Oliveira', '1988-09-17', 'GERENTE', 'S', NULL);
+
+    - Inserir funcionário com nível inválido:
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000005', 'Pedro Lima', '1997-12-03', 'LIMPEZA', 'A', '10000000003');
+
+    - Inserir funcionário com superior_cpf apontando para um funcionário sem função 'SUP_LIMPEZA':
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+    VALUES ('10000000006', 'Ricardo Almeida', '1992-11-05', 'LIMPEZA', 'P', '10000000001');
+
+    - Inserir funcionário com função 'SUP_LIMPEZA' e superior_cpf referenciando alguém com função 'LIMPEZA':
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000007', 'Luiza Martins', '1990-04-12', 'SUP_LIMPEZA', 'S', '10000000001');
+
+    - Inserir funcionário com função 'LIMPEZA' e superior_cpf não informado, mas superior_cpf não deve ser NULL para função 'LIMPEZA':
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000008', 'Ricardo Almeida', '1990-11-05', 'LIMPEZA', 'P', NULL);
+
+    - Inserir funcionário com função 'SUP_LIMPEZA' e superior_cpf vazio
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000009', 'Fernanda Ribeiro', '1996-01-14', 'SUP_LIMPEZA', 'J', '');
+
+    - Inserir funcionário com um CPF duplicado:
+        INSERT INTO funcionario (cpf, nome, data_nasc, funcao, nivel, superior_cpf) 
+        VALUES ('10000000001', 'João Souza', '1994-02-17', 'LIMPEZA', 'P', '10000000003');
