@@ -1,0 +1,45 @@
+#imagem-martina {
+    margin-bottom: 56px;
+}
+
+.span-inicio {
+    font: var(--subtitle);
+    color: var(--gray-500);
+    margin-bottom: 8px;
+}
+
+#nome-martina {
+    color: var(--red);
+}
+
+h1 {
+    font: var(--title-lg);
+    color: var(--gray-600);
+    margin-bottom: 20px;
+}
+
+#texto-header {
+    font: var(--text-sm);
+    color: var(--gray-400);
+    width: 680px;
+    margin-left: 300px;
+    margin-bottom: 80px;
+}
+
+#icons {
+    display: flex;
+    align-items: center;
+    margin-left: 220px;
+    margin-bottom: 94px;
+
+    span {
+        margin-top: 3px;
+        padding-left: 6px;
+        font: var(text-md);
+        color: var(--gray-500);
+    }
+}
+
+#setinhas-baixo {
+    padding-bottom: 130px;
+}
